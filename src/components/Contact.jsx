@@ -82,7 +82,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-16">
+    <section
+      id="contact"
+      className="mx-auto max-w-6xl px-4 py-16 overflow-x-hidden scroll-mt-24"
+    >
+
       <div className="mb-6">
         <h2 className="text-2xl font-semibold">Contact</h2>
         <p className="mt-2 text-neutral-300">
@@ -95,7 +99,7 @@ export default function Contact() {
         <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-24 right-0 h-72 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" />
 
-        <div className="relative grid md:grid-cols-[0.95fr_1.35fr]">
+        <div className="relative grid gap-0 md:grid-cols-[0.95fr_1.35fr]">
           {/* LEFT PANEL */}
           <div className="p-6 md:p-8">
             <div className="h-full rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/25 via-fuchsia-500/10 to-cyan-500/10 p-6">
@@ -127,7 +131,7 @@ export default function Contact() {
                 <p className="text-xs font-semibold uppercase tracking-wider text-neutral-200/80">
                   Connect with me
                 </p>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2 min-w-0">
                   <SocialButton href={contact.linkedin} label="LinkedIn" icon={<LinkedInIcon />} />
                   <SocialButton href={contact.github} label="GitHub" icon={<GitHubIcon />} />
                   <SocialButton href={`mailto:${contact.email}`} label="Email" icon={<MailIcon />} />
@@ -271,14 +275,16 @@ function TextArea({ label, value, onChange, placeholder, required }) {
 
 function InfoRow({ icon, label, value, onAction, actionLabel }) {
   return (
-    <div className="flex items-start justify-between gap-3 rounded-2xl border border-white/10 bg-neutral-950/30 p-4">
-      <div className="flex items-start gap-3">
+    <div className="flex items-start justify-between gap-3 rounded-2xl border border-white/10 bg-neutral-950/30 p-4 min-w-0">
+      <div className="flex items-start gap-3 min-w-0">
         <div className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5">
           {icon}
         </div>
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-semibold text-white">{label}</p>
-          <p className="text-sm text-neutral-200/80">{value}</p>
+          <p className="text-sm text-neutral-200/80 break-words overflow-hidden">
+            {value}
+          </p>
         </div>
       </div>
 
@@ -301,15 +307,13 @@ function SocialButton({ href, label, icon }) {
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:bg-white/10"
+      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:bg-white/10 max-w-full"
     >
       <span className="inline-flex h-5 w-5 items-center justify-center">{icon}</span>
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-sm font-medium whitespace-nowrap">{label}</span>
     </a>
   );
 }
-
-/* ---------------- Icons ---------------- */
 
 function MailIcon() {
   return (
