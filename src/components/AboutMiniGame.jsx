@@ -543,9 +543,7 @@ export default function AboutMiniGame() {
           )}
         </div>
 
-        <p className="mt-3 text-xs text-neutral-400">
-          This game showcases interaction, animation, and state management in React — designed as a modern portfolio feature.
-        </p>
+      
       </div>
 
       {/* keyframes for hud pop */}

@@ -124,9 +124,7 @@ export default function Certifications() {
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
               Certifications
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-neutral-300">
-              Click any card to preview (popup stays fixed while scrolling).
-            </p>
+            
           </div>
 
           {/* Filter */}

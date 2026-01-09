@@ -9,12 +9,14 @@ export default function Hero() {
 
   const orbitItems = useMemo(
     () => [
-      { label: "Projects", to: "projects", emoji: "💼" },
-      { label: "Skills", to: "skills", emoji: "🧠" },
-      { label: "Contact", to: "contact", emoji: "✉️" },
-      { label: "Testing", to: "projects", emoji: "🧪" },
-      { label: "Full-Stack", to: "projects", emoji: "⚡" },
-      { label: "ML / CV", to: "projects", emoji: "🔬" },
+      {to: "projects", emoji: "💼" },
+      {to: "skills", emoji: "🧠" },
+      {to: "contact", emoji: "✉️" },
+      {to: "projects", emoji: "🧪" },
+      {to: "projects", emoji: "⚡" },
+      {to: "certifications", emoji: "🏅" },
+      {to: "about", emoji: "🎮" },
+      
     ],
     []
   );

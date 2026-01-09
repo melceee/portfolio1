@@ -31,9 +31,7 @@ export default function Projects() {
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h2 className="text-2xl font-semibold">Projects</h2>
-          <p className="mt-2 text-neutral-300">
-            Filter, search, and open a project for full details.
-          </p>
+          
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
