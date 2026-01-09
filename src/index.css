@@ -11,3 +11,17 @@ html {
 ::selection {
   background: rgba(99, 102, 241, 0.25);
 }
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
